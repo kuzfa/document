@@ -1,0 +1,20 @@
+shell命令计算加减法
+	方法一：echo `expr 9 / 3`
+	方法二：echo 9 + 3 |bc
+	如果是乘法，记得加转义：echo 9 \* 3 |bc
+shell命令日期
+	mac:
+		date "+%Y-%m-%d %H:%M:%S" 打印当前时间
+		date +%s 打印当前时间戳
+		date -r timemillis 时间戳转时间
+		date -r timemillis "+%Y-%m-%d %H:%M:%S" 时间戳转指定格式时间
+		date -j -f %Y-%m-%d 2015-09-28 "+%Y-%m-%d %H:%M:%S" 查看指定时间的时间，-f要跟-j一起用
+		date -v5m "+%Y-%m-%d %H:%M:%S" 指定到某个月的时间
+		date -v-5m "+%Y-%m-%d %H:%M:%S" 减去指定月份的时间
+	linux
+		date +%s 打印当前时间戳
+		date -d "+1 day" +%Y%m%d   #显示前一天的日期 
+		date -d "-1 day" +%Y%m%d   #显示后一天的日期 
+		date -d "2009-12-12" +"%Y/%m/%d %H:%M.%S" 时间格式转换
+		date -s "2019-12-01" -s设置时间
+		date -d@1592537509 +%Y%m%d 时间戳转时间
